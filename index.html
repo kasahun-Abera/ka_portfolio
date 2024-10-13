@@ -35,9 +35,35 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+    /* Preloader styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fff;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    /* Hide preloader after page load */
+    #preloader.hidden {
+      display: none;
+    }
+  </style>
+  
 </head>
 
 <body>
+  <div id="preloader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>  
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -614,7 +640,12 @@
       });
     });
   </script>
-  
+  <script>
+    window.addEventListener('load', function () {
+      // Hide the preloader after the page has fully loaded
+      document.getElementById('preloader').classList.add('hidden');
+    });
+  </script>  
    
 </body>
 
