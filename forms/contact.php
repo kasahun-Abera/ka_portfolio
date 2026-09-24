@@ -2,8 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Include the PHPMailer library
-require '../vendor/autoload.php'; // Path to the PHPMailer autoload file
+// Include the PHPMailer library and mail configuration
+require '../vendor/autoload.php';
+$mailConfig = require __DIR__ . '/mail.config.php';
 
 // Check if the form is submitted via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -15,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = trim($_POST["message"]);
 
     // Set the recipient email address
-    $recipient = "kasahunabera81@gmail.com"; // Your email address
+    $recipient = $mailConfig['recipient'];
 
     // Create a new PHPMailer instance
     $mail = new PHPMailer(true);
@@ -23,34 +24,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // SMTP server configuration
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com'; // Set the SMTP server to send through
-        $mail->SMTPAuth = true; // Enable SMTP authentication
-        $mail->Username = 'lilkasabera@gmail.com'; // Your SMTP username
-        $mail->Password = 'ghjjfekzntuqjzra'; // Your SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption
-        $mail->Port = 587; // TCP port to connect to
+        $mail->Host = $mailConfig['host'];
+        $mail->SMTPAuth = true;
+        $mail->Username = $mailConfig['username'];
+        $mail->Password = $mailConfig['password'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = $mailConfig['port'];
 
         // Recipients
-        $mail->setFrom($email, $name); // Sender's email and name
-        $mail->addAddress($recipient); // Add a recipient
+        $mail->setFrom($email, $name);
+        $mail->addAddress($recipient);
 
         // Content
-        $mail->isHTML(true); // Set email format to HTML
-        $mail->Subject = $subject; // Subject line
-        $mail->Body = "Name: $name<br>Email: $email<br><br>Message:<br>$message"; // Email body
-        $mail->AltBody = "Name: $name\nEmail: $email\n\nMessage:\n$message"; // Plain text body for non-HTML email clients
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = "Name: $name<br>Email: $email<br><br>Message:<br>$message";
+        $mail->AltBody = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 
         // Send the email
         $mail->send();
-        http_response_code(200); // Set a 200 OK response code
+        http_response_code(200);
         echo json_encode(["status" => "success", "message" => "Thank you! Your message has been sent."]);
     } catch (Exception $e) {
-        http_response_code(500); // Set a 500 Internal Server Error response code
-        echo json_encode(["status" => "error", "message" => "Oops! Something went wrong and we couldn't send your message. Mailer Error: {$mail->ErrorInfo}"]);
+        http_response_code(500);
+        // Do not leak SMTP error details to the client
+        error_log('Contact form mailer error: ' . $mail->ErrorInfo);
+        echo json_encode(["status" => "error", "message" => "Oops! Something went wrong and we couldn't send your message. Please try again or email me directly."]);
     }
 } else {
     // Not a POST request
-    http_response_code(403); // Set a 403 Forbidden response code
+    http_response_code(403);
     echo json_encode(["status" => "error", "message" => "There was a problem with your submission, please try again."]);
 }
 ?>

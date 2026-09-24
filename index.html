@@ -5,17 +5,16 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Kasahun Abera - Professional PHP & Laravel Developer</title>
-  <meta content="Discover Kasahun Abera’s expertise in full stack web development, specializing in PHP, Laravel, and scalable web applications. Explore projects, skills, and achievements" name="description">
-  <meta content="Kasahun Abera, Laravel Developer, PHP Developer, Full Stack Web Developer, Software Solutions, Web Applications, Developer Portfolio, Ethiopia" name="keywords">
+  <title>Kasahun Abera - Laravel / PHP Full-Stack Developer</title>
+  <meta content="Kasahun Abera is a Laravel/PHP Full-Stack Developer and Backend Engineer with 5+ years of experience building enterprise web applications across ERP, property, hotel, coffee, inventory, and more." name="description">
+  <meta content="Kasahun Abera, Laravel Developer, PHP Developer, Full Stack Web Developer, Backend Engineer, Software Solutions, Web Applications, Developer Portfolio, Ethiopia" name="keywords">
 
-  <!-- Favicons --> 
+  <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
   <link href="assets/img/favicon-img.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -49,13 +48,123 @@
       justify-content: center;
       align-items: center;
     }
-  
-    /* Hide preloader after page load */
+
     #preloader.hidden {
       display: none;
     }
+
+    /* Portfolio project cards */
+    .portfolio .portfolio-wrap::before {
+      display: none;
+    }
+
+    .portfolio-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 28px 24px;
+      height: 100%;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+      border-top: 3px solid #149ddd;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-card::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 110px;
+      height: 110px;
+      background: linear-gradient(135deg, rgba(20, 157, 221, 0.12), rgba(31, 82, 151, 0.08));
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.13);
+      border-top-color: #1f5297;
+    }
+
+    .portfolio-card .p-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+      background: linear-gradient(135deg, #149ddd, #1f5297);
+      margin-bottom: 18px;
+      flex-shrink: 0;
+    }
+
+    .portfolio-card .p-domain {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #149ddd;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .portfolio-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #272829;
+      margin: 0 0 10px 0;
+      line-height: 1.35;
+    }
+
+    .portfolio-card p {
+      font-size: 14px;
+      color: #5c6570;
+      line-height: 1.6;
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    .portfolio-card .p-note {
+      font-size: 12px;
+      color: #8a919a;
+      font-style: italic;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed #e3e7ec;
+    }
+
+    .portfolio-card .p-tech {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .portfolio-card .p-tech span {
+      font-size: 11px;
+      background: #eef6fc;
+      color: #1f5297;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .portfolio #portfolio-flters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+      }
+    }
   </style>
-  
+
 </head>
 
 <body>
@@ -63,7 +172,7 @@
     <div class="spinner-border text-primary" role="status">
       <span class="sr-only">Loading...</span>
     </div>
-  </div>  
+  </div>
 
   <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
@@ -73,15 +182,15 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/ka-high-resolution-logo-black.png" alt="" class="img-fluid rounded-circle">
+        <img src="assets/img/ka-high-resolution-logo-black.png" alt="Kasahun Abera" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">Kasahun Abera</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="https://x.com/KasahunAbera89" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="https://www.instagram.com/lil_kas_ab/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="https://web.facebook.com/profile.php?id=100009331863285/" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.linkedin.com/in/kasahun-abera-3aa293219/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/kasahun-Abera" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-        </div>        
+          <a href="https://x.com/KasahunAbera89" target="_blank" class="twitter" aria-label="X / Twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://www.instagram.com/lil_kas_ab/" target="_blank" class="instagram" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://web.facebook.com/profile.php?id=100009331863285/" target="_blank" class="facebook" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/kasahun-abera-3aa293219/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/kasahun-Abera" target="_blank" class="github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+        </div>
       </div>
 
       <nav id="navbar" class="nav-menu navbar">
@@ -98,72 +207,32 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <!-- <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Kasahun Abera</h1>
-      <p>I'm a <span class="typed" data-typed-items="Web App Developer, Laravel Backend Developer, Full Stack Developer, Software Engineer, PHP Developer"></span></p>
-    </div>
-  </section> -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container text-center" data-aos="fade-in">
       <h1>Kasahun Abera</h1>
-      <p>I'm a <span class="typed" data-typed-items="Full Stack Developer, Laravel Expert, Software Engineer, Backend Developer, Problem Solver"></span></p>
+      <p>I'm a <span class="typed" data-typed-items="Laravel / PHP Full-Stack Developer, Backend Engineer, Full Stack Developer, Software Engineer, Problem Solver"></span></p>
     </div>
-  </section>  
+  </section>
   <!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <!-- <section id="about" class="about">
-      <div class="container">
-        <div class="section-title">
-          <h2>About</h2>
-          <p>I am Kasahun Abera, a dedicated Full Stack Web Developer and Laravel Expert, with a Bachelor's degree in Computer Science from Dilla University. Over the years, I have honed my expertise in both frontend and backend technologies, specializing in PHP and Laravel to deliver scalable and efficient web solutions. My experience spans the complete software development lifecycle, from initial planning and design to deployment and maintenance. I am passionate about creating digital solutions that meet business objectives, and I continuously strive to stay updated with the latest technologies and best practices in web development.</p>
-        </div>
-    
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/hero-bg.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Full Stack Web Developer &amp; Laravel Developer.</h3>
-            <p class="fst-italic">Specializing in PHP, Laravel, and modern web development frameworks, I have successfully built and delivered a range of web applications, from small-scale projects to comprehensive enterprise solutions. I focus on writing clean, maintainable code, ensuring scalability and security at every stage of development.</p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>February 17, 1998</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+251 989010004</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Addis Ababa, Ethiopia</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bsc in Computer Science</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>kasahunabera81@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
     <section id="about" class="about">
       <div class="container">
         <div class="section-title">
           <h2>About Me.</h2>
-          <p>I am Kasahun Abera, a Full Stack Web Developer and Laravel Expert with a Bachelor’s degree in Computer Science from Dilla University. With over four years of experience, I specialize in designing, developing, and optimizing web applications using Laravel, PHP, and modern frontend technologies.</p>
-          <p>My expertise extends across the entire software development lifecycle, from requirement analysis and system architecture to scalable backend development, RESTful API integration, Testing and Deployment and Maintenance and Support. I am passionate about solving complex problems, delivering business-driven solutions, and continuously improving my skills to stay ahead in the fast-evolving tech landscape.</p>
+          <p>Laravel/PHP Full-Stack Developer and Backend Engineer with <strong>5+ years of professional experience</strong> designing, developing, testing, and deploying business and enterprise web applications.</p>
+          <p>Experienced in building software solutions across <strong>Property Management, Hotel Management (HMS), ERP, Coffee Operations, Procurement, Logistics, Inventory Management, Restaurant Management, Documentation, Insurance, Garage Management, and Campaign Management</strong>. Comfortable working directly with clients and stakeholders to turn operational challenges into practical software solutions — from requirements analysis and system design through deployment and maintenance.</p>
         </div>
-    
+
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
             <img src="assets/img/hero-bg.jpg" class="img-fluid rounded" alt="Kasahun Abera">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Full Stack Developer & Laravel Expert</h3>
-            <p class="fst-italic">I specialize in building high-performance web applications with Laravel, PHP, MySQL, and modern JavaScript frameworks, ensuring scalability, security, and an outstanding user experience.</p>
+            <h3>Laravel / PHP Full-Stack Developer &amp; Backend Engineer</h3>
+            <p class="fst-italic">Strong expertise in PHP, Laravel, MySQL, JavaScript, jQuery, AJAX, Bootstrap, RESTful APIs, MVC architecture, authentication and authorization, multi-branch systems, business process automation, and system integrations. Also experienced in product ownership and technical leadership.</p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
@@ -184,286 +253,130 @@
         </div>
       </div>
     </section>
-    <!-- <section id="about" class="about">
-      <div class="container">
-        <div class="section-title">
-          <h2>Who I Am</h2>
-          <p>Hi, I'm **Kasahun Abera**, a **Full Stack Developer & Laravel Expert** with a passion for **building scalable, high-performance web applications**. With a **Computer Science degree from Dilla University** and over **four years of experience**, I have helped businesses **optimize their digital solutions** through **efficient backend architectures and interactive frontend experiences**.</p>
-          <p>I have worked extensively on **enterprise projects**, including **custom SaaS platforms, API integrations, e-commerce solutions, and automation systems**. My expertise lies in designing **secure, scalable, and maintainable applications** that **enhance business operations and user engagement**.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/hero-bg.jpg" class="img-fluid rounded" alt="Kasahun Abera">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Expertise & Skills</h3>
-            <p class="fst-italic">I have **extensive experience** in backend and frontend development, specializing in **PHP, Laravel, Bootstrap, CSS, js, MySQL, and API development**. My goal is to create software that is not only functional but also **scalable and user-friendly**.</p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>February 17, 1998</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+251 989010004</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>Addis Ababa, Ethiopia</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BSc in Computer Science</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>kasahunabera81@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
     <!-- End About Section -->
 
-    <!-- <section id="facts" class="facts">
-      <div class="container">
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>As a seasoned Full Stack Developer with expertise in Laravel and various programming languages, I have contributed to numerous successful projects and collaborations. Below are some key achievements:</p>
-        </div>
-    
-        <div class="row no-gutters">
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
-            <div class="count-box">
-              <i class="bi bi-file-code"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1"></span>
-              <p><strong>Web Applications Developed</strong> From complex business solutions to personal websites.</p>
-            </div>
-          </div>
-    
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="bi bi-clock-history"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1"></span>
-              <p><strong>Years of Experience</strong> In delivering high-quality, scalable software solutions and managing development teams.</p>
-            </div>
-          </div>
-    
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i class="bi bi-laptop"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1"></span>
-              <p><strong>Technologies Utilized</strong> Proficient in multiple programming languages and frameworks including PHP, Java, Python, and Laravel.</p>
-            </div>
-          </div>
-    
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i class="bi bi-chat-left-quote"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1"></span>
-              <p><strong>Client Acknowledgment</strong> Praised for delivering beyond expectations, with a focus on quality and timely delivery. <a href="https://drive.google.com/file/d/1m8jmnK5pQMRd2xLa8aNrqHvTrO6ezJQs/view?usp=drive_link" class="btn btn-sm btn-info" target="_blank">View PDF</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
+    <!-- ======= Facts Section ======= -->
     <section id="facts" class="facts">
       <div class="container">
         <div class="section-title">
           <h2>Key Achievements</h2>
-          <p>With extensive experience in **full-stack development**, I have built and contributed to **high-impact projects** across various industries. Below are some of my professional highlights:</p>
+          <p>With 5+ years of full-stack development experience, I have delivered high-impact projects across multiple industries. Below are some professional highlights:</p>
         </div>
         <div class="row no-gutters">
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
             <div class="count-box">
               <i class="bi bi-file-code"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"></span>
-              <p><strong>Projects Completed</strong> Successfully built and deployed custom web applications, e-commerce platforms, API integrations, and enterprise solutions.</p>
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"></span>
+              <p><strong>Projects Completed</strong> Enterprise systems, ERPs, business automation tools, and full-stack web applications.</p>
             </div>
           </div>
-      
+
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="count-box">
               <i class="bi bi-clock-history"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1"></span>
-              <p><strong>Years of Experience</strong> Designing and implementing scalable, secure, and high-performance web applications.</p>
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1"></span>
+              <p><strong>Years of Experience</strong> Designing and delivering scalable, secure, and high-performance web applications.</p>
             </div>
           </div>
-      
+
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="count-box">
               <i class="bi bi-laptop"></i>
-              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1"></span>
-              <p><strong>Technologies Mastered</strong> Proficient in Laravel, PHP, JavaScript, MySQL, RESTful APIs, and modern cloud solutions.</p>
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1"></span>
+              <p><strong>Business Domains</strong> Property, hotel, coffee, ERP, procurement, logistics, inventory, restaurant, insurance, and more.</p>
             </div>
           </div>
-      
+
           <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="count-box">
               <i class="bi bi-chat-left-quote"></i>
               <span class="purecounter" data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1"></span>
-              <p><strong>Client Recognition</strong> Recognized for delivering top-tier solutions with a focus on efficiency, performance, and security.  
+              <p><strong>Client Recognition</strong> Recognized for delivering beyond expectations, with a focus on quality and timely delivery.
               <a href="https://drive.google.com/file/d/1m8jmnK5pQMRd2xLa8aNrqHvTrO6ezJQs/view?usp=drive_link" class="btn btn-sm btn-info" target="_blank">View PDF</a></p>
             </div>
           </div>
         </div>
       </div>
-    </section>    
-    
-    <!-- <section id="skills" class="skills section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>With a robust background in both front-end and back-end development, I specialize in creating full-stack solutions using a wide range of programming languages and frameworks. My key competencies are highlighted below:</p>
-        </div>
-        <div class="row skills-content">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="progress">
-              <span class="skill">Laravel <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Bootstrap 4 & 5 / Responsive Design <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">JavaScript / ES6+ <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Java <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>  
-            <div class="progress">
-              <span class="skill">Version Control (Git) <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Agile Methodologies (Scrum) <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>  
-          </div>
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="progress">
-              <span class="skill">PHP <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">HTML5/CSS3 <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">API Development & Integration (RESTful APIs) <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Python <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">MySQL/SQL <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
+    </section>
+    <!-- End Facts Section -->
+
+    <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
       <div class="container">
         <div class="section-title">
           <h2>Technical Skills</h2>
-          <p>My expertise spans **backend and frontend technologies**, ensuring **scalable, maintainable, and efficient** software solutions.</p>
+          <p>Backend and frontend technologies for building scalable, maintainable, and efficient software solutions.</p>
         </div>
-        
+
         <div class="row skills-content">
           <div class="col-lg-6" data-aos="fade-up">
             <div class="progress">
-              <span class="skill">Laravel & PHP <i class="val">95%</i></span>
+              <span class="skill">Laravel &amp; PHP <i class="val">95%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-    
+
             <div class="progress">
-              <span class="skill">JavaScript (ES6+), JQuery & AJAX <i class="val">90%</i></span>
+              <span class="skill">JavaScript, jQuery &amp; AJAX <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-    
+
             <div class="progress">
-              <span class="skill">MySQL <i class="val">90%</i></span>
+              <span class="skill">MySQL &amp; Relational Database Design <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-    
+
             <div class="progress">
-              <span class="skill">RESTful API Development & Integration <i class="val">90%</i></span>
+              <span class="skill">RESTful APIs &amp; Integrations <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-    
+
             <div class="progress">
-              <span class="skill">Version Control (Git) <i class="val">90%</i></span>
+              <span class="skill">Version Control (Git / GitHub) <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
-    
+
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="progress">
-              <span class="skill">HTML5, CSS3, Bootstrap 5 <i class="val">90%</i></span>
+              <span class="skill">HTML5, CSS3, Bootstrap 4 &amp; 5, SCSS <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-    
+
             <div class="progress">
-              <span class="skill">Agile Development & Scrum <i class="val">85%</i></span>
+              <span class="skill">MVC Architecture &amp; Business Logic <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Auth, Security &amp; Multi-branch Systems <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-    
+
             <div class="progress">
-              <span class="skill"> Hosting and Deployment <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-    
-            <div class="progress">
-              <span class="skill">Security & Performance Optimization <i class="val">85%</i></span>
+              <span class="skill">Hosting &amp; Deployment (cPanel) <i class="val">85%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-    
+
             <div class="progress">
-              <span class="skill">Python & Java <i class="val">75%</i></span>
+              <span class="skill">Python, Java, C++ &amp; AngularJS <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -471,360 +384,353 @@
           </div>
         </div>
       </div>
-    </section>    
+    </section>
     <!-- End Skills Section -->
-    <!-- <section id="resume" class="resume">
-      <div class="container">
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>With expertise in Laravel and full-stack development, I have contributed to various web solutions in different capacities. My work spans complex projects, team leadership, and client collaboration to build efficient and scalable applications.</p>
-        </div>
-    
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Kasahun Abera</h4>
-              <p><em>Full Stack Developer and Software Engineer with over 3+ years of experience in delivering end-to-end web applications using PHP, Laravel, JavaScript, and modern development tools. Proven ability to solve complex problems and deliver on client requirements.</em></p>
-              <ul>
-                <li>Addis Ababa, Ethiopia</li>
-                <li>(+251) 989010004</li>
-                <li>kasahunabera81@gmail.com</li>
-              </ul>
-            </div>
-    
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Science in Computer Science</h4>
-              <h5>2016 - 2021</h5>
-              <p><em>Dilla University, Ethiopia</em></p>
-              <p>Graduated with a 3.59 GPA, with key studies in software engineering, algorithms, and data management. Final project focused on developing a complex web and desktop system for university use.</p>
-            </div>
-          </div>
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Full Stack Developer & Software Engineer</h4>
-              <h5>2021 - Present</h5>
-              <p><em>ADM Technologies PLC, Ethiopia</em></p>
-              <ul>
-                <li>Developed and maintained full-stack web applications, working on both front-end and back-end components.</li>
-                <li>Currently leading the development of enterprise solutions, including a Coffee Inventory System and eDOCS - all in one export documentation, ensuring timely delivery and system scalability.</li>
-                <li>Collaborate with clients and stakeholders to ensure projects meet business objectives and user requirements.</li>
-              </ul>
-            </div>
-    
-            <div class="resume-item">
-              <h4>Product Partner & Full Stack Developer (Side Hustle)</h4>
-              <h5>12/09/2023 - 16/11/2023 (Development and Delivery Timeline)</h5>
-              <p><em>Kaki PLC (Campaign Management System)</em></p>
-              <ul>
-                <li>Created a Campaign Management System from the ground up, working as both developer and product owner.</li>
-                <li>Managed system architecture, API integration, and user interface design, delivering a robust, scalable product.</li>
-                <li>Handled client communications and system deployment, ensuring smooth operation post-launch.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- <section id="resume" class="resume">
-      <div class="container">
-        <div class="section-title">
-          <h2>My Journey</h2>
-          <p>With a strong background in **software engineering and full-stack development**, I have contributed to **business-driven digital solutions** in various industries. My expertise spans **backend development, API engineering, enterprise software, and front-end development**.</p>
-          <p><a href="https://drive.google.com/file/d/1wD3m7CVWhRLbXzUBfZi7S9_Hv3ndUEJh/view?usp=sharing" class="btn btn-primary" target="_blank"><i class="bi bi-download"></i> Download Full Resume (PDF)</a></p>
-        </div>
-    
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">About Me</h3>
-            <div class="resume-item pb-0">
-              <h4>Kasahun Abera</h4>
-              <p><em>**Full Stack Developer & Laravel Expert** passionate about **problem-solving, system architecture, and building scalable applications**. With **4+ years of experience**, I focus on delivering **high-performance, secure, and efficient software solutions**.</em></p>
-              <ul>
-                <li><strong>Location:</strong> Addis Ababa, Ethiopia</li>
-                <li><strong>Phone:</strong> (+251) 989010004</li>
-                <li><strong>Email:</strong> kasahunabera81@gmail.com</li>
-              </ul>
-            </div>
-    
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>BSc in Computer Science</h4>
-              <h5>2016 - 2021</h5>
-              <p><em>Dilla University, Ethiopia</em></p>
-              <p>Graduated with a **3.59 GPA**, focusing on **software engineering, algorithms, and data security**. Developed a **multi-platform PC Controlling System** as my final project.</p>
-            </div>
-          </div>
-    
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Work Experience</h3>
-    
-            <div class="resume-item">
-              <h4>Full Stack Developer & Software Engineer</h4>
-              <h5>2021 - Present</h5>
-              <p><em>ADM Technologies PLC</em></p>
-              <ul>
-                <li>Built and maintained **large-scale enterprise applications**, optimizing **security, database performance, and real-time processing**.</li>
-                <li>Designed, implemented, and delivered **scalable, secure, and user-friendly web applications** , working on both front-end and back-end components.</li>
-                <li>Currently leading the development of enterprise solutions, including **BeanFlowPro** and **eDOCS**, handling **backend logic, API development, Frontend development, and business process automation, Generally all software development life cycle tasks.**.</li>
-              </ul>
-            </div>
-    
-            <div class="resume-item">
-              <h4>Laravel Backend Developer</h4>
-              <h5>Apr 2023 - Aug 2023</h5>
-              <p><em>Jaktech Engineering & Trading PLC</em></p>
-              <ul>
-                <li>Designed and implemented **RESTful APIs** for **business automation and SaaS platforms**.</li>
-                <li>Worked on projects like **NIB Insurance System** and **AEMRO Garage Management**.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
+
+    <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
       <div class="container">
         <div class="section-title">
           <h2>Resume</h2>
-          <p>Experienced Full Stack Developer & Software Engineer specializing in Laravel, PHP, JavaScript, and RESTful API development. Proven track record of building scalable applications, optimizing database performance, and leading full-stack development projects. &nbsp;   <a href="https://drive.google.com/file/d/1wD3m7CVWhRLbXzUBfZi7S9_Hv3ndUEJh/view?usp=sharing" class="btn btn-sm btn-info" target="_blank"><i class="bi bi-download"></i>  download in PDF</a></p>
+          <p>Laravel/PHP Full-Stack Developer with 5+ years of professional experience across the full software development lifecycle — requirements analysis, system design, database design, development, testing, deployment, maintenance, and client collaboration. &nbsp; <a href="https://drive.google.com/file/d/1wD3m7CVWhRLbXzUBfZi7S9_Hv3ndUEJh/view?usp=sharing" class="btn btn-sm btn-info" target="_blank"><i class="bi bi-download"></i> Download PDF</a></p>
         </div>
-    
+
         <div class="row">
           <!-- Summary & Education -->
           <div class="col-lg-6" data-aos="fade-up">
             <h3 class="resume-title">Summary</h3>
             <div class="resume-item pb-0">
               <h4>Kasahun Abera</h4>
-              <p><em>Dedicated Full Stack Developer & Laravel Expert with 4+ years of experience in software development, system architecture, and enterprise solutions. Passionate about building high-performance, secure, and scalable web applications.</em></p>
+              <p><em>Laravel/PHP Full-Stack Developer and Backend Engineer with 5+ years of professional experience designing, developing, testing, and deploying business and enterprise web applications. Experienced in product ownership and technical leadership — leading project implementation, coordinating requirements, making technical decisions, and ensuring delivered systems meet business objectives.</em></p>
               <ul>
                 <li><strong>Location:</strong> Addis Ababa, Ethiopia</li>
                 <li><strong>Phone:</strong> (+251) 989010004</li>
                 <li><strong>Email:</strong> kasahunabera81@gmail.com</li>
               </ul>
             </div>
-    
+
             <h3 class="resume-title">Education</h3>
             <div class="resume-item">
-              <h4>Bachelor of Science in Computer Science</h4>
-              <h5>2016 - 2021</h5>
+              <h4>Bachelor of Science (BSc) in Computer Science</h4>
+              <h5>2016 - 2021 · Graduated January 2021</h5>
               <p><em>Dilla University, Ethiopia</em></p>
-              <p>Graduated with a 3.59 GPA, specializing in software engineering, data structures, and algorithms. Developed a PC Controlling System for the university, integrating web, desktop, and embedded systems.</p>
+              <p>CGPA: 3.59. Key studies in software engineering, algorithms, and data management. Final project: PC Controlling System.</p>
+            </div>
+
+            <h3 class="resume-title">Core Strengths</h3>
+            <div class="resume-item">
+              <h4>What I Bring</h4>
+              <ul>
+                <li>Enterprise web application development &amp; ERP systems</li>
+                <li>Database design, REST API development &amp; integration</li>
+                <li>Multi-tenant / multi-branch systems &amp; business process automation</li>
+                <li>Requirements analysis, client collaboration &amp; technical leadership</li>
+                <li>Testing, debugging, production deployment &amp; SDLC ownership</li>
+              </ul>
             </div>
           </div>
-    
+
           <!-- Professional Experience -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Professional Experience</h3>
-    
+
             <div class="resume-item">
-              <h4>Full Stack Developer & Software Engineer</h4>
-              <h5>2021 - Present</h5>
+              <h4>Full-Stack Software Engineer / Lead Developer</h4>
+              <h5>May 2021 - Present</h5>
               <p><em>ADM Technologies PLC, Ethiopia</em></p>
               <ul>
-                <li>Built and maintained various enterprise level business applications, optimizing security, database performance, and real-time processing.</li>
-                <li>Designed, implemented, and delivered scalable, secure, and user-friendly web applications , working on both front-end and back-end components.</li>
-                <li>Currently leading the development of enterprise solutions, including BeanFlowPro and eDOCS, handling backend logic, API development, Frontend development, and business process automation, Generally all software development life cycle tasks..</li>
+                <li>End-to-end development and delivery of multiple business applications using Laravel, PHP, MySQL, JavaScript, jQuery, AJAX, Bootstrap, and SCSS.</li>
+                <li><strong>eDOCS:</strong> Coffee export documentation system — customers, products, orders, document workflows, templates, and export processes.</li>
+                <li><strong>BeanFlowPro:</strong> Coffee ERP covering batches from supplier arrival through processing, sampling, sales, site budgets, and expenses.</li>
+                <li><strong>Inventory / Import Management:</strong> Purchasing, suppliers, products, stock, and sales for importer operations.</li>
+                <li>Worked directly with clients; designed databases, workflows, and UIs; managed cPanel deployment and production hosting.</li>
               </ul>
             </div>
-    
+
             <div class="resume-item">
-              <h4>Software Engineer (Laravel Backend Developer)</h4>
-              <h5>Apr 2023 - Aug 2023</h5>
-              <p><em>Jaktech Engineering & Trading PLC</em></p>
+              <h4>Backend Engineer</h4>
+              <h5>April 2023 - August 2023</h5>
+              <p><em>Jaktech Engineering and Trading PLC</em></p>
               <ul>
-                <li>Developed and optimized RESTful APIs for various business applications.</li>
-                <li>Played a key role in delivering projects such as NIB Insurance Management System and AEMRO Garage Management Software.</li>
-                <li>Collaborated with frontend teams to integrate dynamic and secure APIs with user-friendly interfaces.</li>
+                <li>Backend development, database implementation, API integrations, and business logic for enterprise applications.</li>
+                <li><strong>NIB Insurance Share:</strong> Backend development and business logic for an insurance-related application.</li>
+                <li><strong>Vote &amp; Meeting Management System:</strong> Organizational voting and meeting management processes.</li>
+                <li><strong>AEMRO Garage Management System:</strong> Garage and vehicle-service management operations.</li>
               </ul>
             </div>
-    
+
             <div class="resume-item">
-              <h4>Product Partner & Full Stack Developer</h4>
-              <h5>Sept 2023 - Nov 2023 (Frealance)</h5>
-              <p><em>Kaki PLC (Campaign Management System)</em></p>
+              <h4>Full-Stack Developer &amp; Product Partner</h4>
+              <h5>2022 (Freelance)</h5>
+              <p><em>KAKI PLC — Campaign Management System</em></p>
               <ul>
-                <li>Designed and developed a custom Campaign Management System, leading both backend and frontend architecture.</li>
-                <li>Implemented Laravel-based authentication, API-driven workflows, and data analytics dashboards.</li>
-                <li>Managed deployment strategies, client communication, and post-launch enhancements.</li>
+                <li>Designed and developed a Campaign Management System supporting digital campaign operations.</li>
+                <li>Led requirements analysis, system design, full-stack development, and business process implementation.</li>
+                <li>Product decision-making, technical implementation, and client/stakeholder collaboration as product partner.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Full-Stack Software Developer / ERP &amp; Business Systems Developer</h4>
+              <p><em>KERADION</em></p>
+              <ul>
+                <li><strong>Property ERP:</strong> Properties, buildings, units, tenants, leases, invoicing, utilities, service charges, payments, tenant portal, Ethiopian calendar support.</li>
+                <li><strong>Hotel Management (HMS):</strong> Multi-company, multi-branch HMS — reservations, check-in/out, housekeeping, restaurant/POS, spa, events, billing, permissions.</li>
+                <li><strong>Coffee ERP, Procurement, Logistics &amp; Restaurant systems:</strong> Supplier/farmer management, batches, inventory, purchasing, multi-branch restaurant with KDS and recipe-based stock deduction.</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-    </section>        
-    <!-- <section id="portfolio" class="portfolio section-bg">
+    </section>
+    <!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
       <div class="container">
-    
+
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p>My portfolio includes a range of internal applications built for private clients and organizations. Due to the sensitive nature of these projects, I cannot display specific details publicly. However, I am available to present demonstrations upon request to discuss my work in more depth.</p>
+          <p>A selection of enterprise systems, ERPs, and business applications delivered across industries. Due to client confidentiality, some project details cannot be shared publicly — live demonstrations and case studies are available upon request.</p>
         </div>
-    
+
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-              <li class="filter-active"></li>
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-enterprise">Enterprise</li>
+              <li data-filter=".filter-erp">ERP</li>
+              <li data-filter=".filter-coffee">Coffee</li>
+              <li data-filter=".filter-webapps">Web Apps</li>
             </ul>
           </div>
         </div>
-    
-      </div>
-    </section> -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>My portfolio showcases a diverse range of **web applications, SaaS platforms, and business automation solutions**. Due to client confidentiality, project details cannot be shared publicly, but I am happy to provide **live demonstrations and discuss specific case studies upon request**.</p>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-enterprise">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-shield-lock"></i></div>
+                <span class="p-domain">Enterprise</span>
+                <h4>Confidential Enterprise Project</h4>
+                <p>NDA-protected client system spanning complex business workflows and database-driven operations. Architecture and implementation details available on request.</p>
+                <div class="p-note">Confidential — details available upon request</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-coffee filter-enterprise">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-file-earmark-text"></i></div>
+                <span class="p-domain">Documentation · Coffee</span>
+                <h4>eDOCS – Coffee Export Documentation</h4>
+                <p>Business documentation management for coffee exporters: customers, products, orders, reusable document workflows, templates, files, and export-related processes.</p>
+                <div class="p-tech"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-coffee filter-erp">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-diagram-3"></i></div>
+                <span class="p-domain">Coffee · ERP</span>
+                <h4>BeanFlowPro – Coffee ERP</h4>
+                <p>Coffee business and inventory solution tracking batches from farmer/supplier arrival through processing, reprocessing, sampling, export/local sales, site budgets, and expenses.</p>
+                <div class="p-tech"><span>Laravel</span><span>MySQL</span><span>Inventory</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-erp">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-box-seam"></i></div>
+                <span class="p-domain">ERP · Inventory</span>
+                <h4>Inventory / Import Management</h4>
+                <p>End-to-end importer inventory solution covering purchasing, suppliers, products, stock management, sales, and related business processes.</p>
+                <div class="p-tech"><span>Laravel</span><span>MySQL</span><span>Stock</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-enterprise filter-erp">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-building"></i></div>
+                <span class="p-domain">Property · ERP</span>
+                <h4>Property Management / Property ERP</h4>
+                <p>Multi-property system: buildings, floors, units, tenants, leases, rent invoicing, utility billing, service charges, parking, payments, penalties, tenant portal, Ethiopian calendar.</p>
+                <div class="p-tech"><span>Laravel</span><span>Multi-branch</span><span>Billing</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-enterprise">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-hospital"></i></div>
+                <span class="p-domain">Hotel Management</span>
+                <h4>Hotel Management System (HMS)</h4>
+                <p>Multi-company, multi-branch HMS: reservations, check-in/out, housekeeping, restaurant/POS, spa &amp; gym, events, parking, billing, branch modules, and access control.</p>
+                <div class="p-tech"><span>Laravel</span><span>POS</span><span>Multi-branch</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-coffee filter-erp">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-bezier2"></i></div>
+                <span class="p-domain">Coffee · ERP</span>
+                <h4>Coffee ERP / Coffee Management</h4>
+                <p>Supplier and farmer management, purchasing, batches, processing, reprocessing, inventory, sampling, quality workflows, rejected quantities, export/local sales, budgets, and expenses.</p>
+                <div class="p-tech"><span>Laravel</span><span>Operations</span><span>Quality</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-enterprise filter-erp">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-cart-check"></i></div>
+                <span class="p-domain">Procurement · ERP</span>
+                <h4>Procurement Management System</h4>
+                <p>Supplier management, purchase and product management, purchasing workflows, inventory integration, stock receiving, purchase tracking, controls, and business reporting.</p>
+                <div class="p-tech"><span>Laravel</span><span>Purchasing</span><span>Reporting</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-enterprise">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-truck"></i></div>
+                <span class="p-domain">Logistics</span>
+                <h4>Logistics Management System</h4>
+                <p>Business workflows for logistics and operational movement: procurement-related logistics, inventory movement, transportation processes, and operational tracking.</p>
+                <div class="p-tech"><span>Laravel</span><span>Tracking</span><span>Workflow</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-enterprise filter-erp">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-cup-straw"></i></div>
+                <span class="p-domain">Restaurant · ERP</span>
+                <h4>Restaurant Management System</h4>
+                <p>Multi-branch restaurant &amp; inventory: menu builder, waiter ordering, Kitchen Display System, ingredient management, recipe-based stock deduction, purchases, and stock usage.</p>
+                <div class="p-tech"><span>Laravel</span><span>KDS</span><span>Multi-branch</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-webapps">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-megaphone"></i></div>
+                <span class="p-domain">Campaign Management</span>
+                <h4>Campaign Management System</h4>
+                <p>Digital campaign operations platform designed and built as product partner — requirements, system design, full-stack development, and product coordination for KAKI PLC.</p>
+                <div class="p-tech"><span>Laravel</span><span>Full-stack</span><span>Product</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-enterprise">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-clipboard2-pulse"></i></div>
+                <span class="p-domain">Insurance</span>
+                <h4>NIB Insurance Share</h4>
+                <p>Backend development and business logic implementation for an insurance-related enterprise application delivered at Jaktech Engineering and Trading PLC.</p>
+                <div class="p-tech"><span>PHP</span><span>Backend</span><span>Business Logic</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-enterprise">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-people"></i></div>
+                <span class="p-domain">Organization</span>
+                <h4>Vote &amp; Meeting Management</h4>
+                <p>Backend functionality for organizational voting and meeting management processes, including workflow and participation management.</p>
+                <div class="p-tech"><span>PHP</span><span>Backend</span><span>Workflow</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-enterprise">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-tools"></i></div>
+                <span class="p-domain">Garage Management</span>
+                <h4>AEMRO Garage Management System</h4>
+                <p>Backend functionality for garage and vehicle-service management operations — service workflows, vehicle records, and operational tracking.</p>
+                <div class="p-tech"><span>PHP</span><span>Backend</span><span>Operations</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-webapps">
+            <div class="portfolio-wrap">
+              <div class="portfolio-card">
+                <div class="p-icon"><i class="bi bi-pc-display"></i></div>
+                <span class="p-domain">Web · Desktop · Embedded</span>
+                <h4>PC Controlling System</h4>
+                <p>Dilla University final project combining web and desktop applications with barcode generation and scanning functionalities.</p>
+                <div class="p-tech"><span>PHP</span><span>MySQL</span><span>Desktop</span></div>
+              </div>
+            </div>
+          </div>
+
         </div>
-    
-        <!-- <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li class="filter-active"></li>
-              <li class="filter-active">Featured Projects</li>
-            </ul>
-          </div>
-        </div> -->
+
       </div>
-    </section>    
-    <!-- <section id="services" class="services">
-      <div class="container">
-    
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Whether you're looking for a freelance developer for a short-term project, a part-time consultant, or a full-time collaborator, I offer flexible services to fit your specific requirements. Specializing in full-stack development, my expertise helps businesses thrive in any environment, including remote setups.</p>
-        </div>
-    
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-binoculars"></i></div>
-            <h4 class="title"><a href="">Web Application Development</a></h4>
-            <p class="description">Developing high-quality web applications using Laravel, PHP, JavaScript, and other modern technologies. Available for full-time and freelance engagements.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            <h4 class="title"><a href="">Remote Consulting & Strategy</a></h4>
-            <p class="description">Offering remote consulting services focused on system design and architecture, helping businesses build sustainable and scalable solutions from anywhere.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-briefcase"></i></div>
-            <h4 class="title"><a href="">Backend System Integration</a></h4>
-            <p class="description">Providing custom backend integrations for seamless workflows across various platforms. Available for part-time and full-time work, as well as ongoing remote support.</p>
-          </div>
-        </div>
-    
-      </div>
-    </section> -->
+    </section>
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container">
-        <!-- <div class="section-title">
-          <h2>Services</h2>
-          <p>With **extensive experience in full-stack development**, I offer a range of services designed to help businesses build **scalable, high-performance applications**. Whether you need a **freelance developer, a part-time consultant, or a long-term collaborator**, I provide **tailored solutions** to meet your needs.</p>
-        </div> -->
         <div class="section-title">
           <h2>What I Offer</h2>
-          <p>I specialize in **developing, optimizing, and scaling web applications** to help businesses streamline their operations. Whether you're a **startup, enterprise, or an individual looking for a digital solution**, I provide **high-quality software development services** tailored to your needs.</p>
+          <p>I develop, optimize, and scale web applications that help businesses streamline operations. Whether you are a startup, enterprise, or individual looking for a digital solution, I provide high-quality software development services tailored to your needs.</p>
         </div>
-    
+
         <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-code"></i></div>
-            <h4 class="title"><a href="#"> Web Application Development</a></h4>
-            <p class="description">From simple landing pages to complex solutions like SaaS platforms and business automation tools, I develop robust, scalable web applications tailored to your needs.</p>
+            <h4 class="title"><a href="#">Web Application Development</a></h4>
+            <p class="description">From landing pages to enterprise systems, SaaS platforms, and business automation tools — full-stack development with Laravel, PHP, MySQL, and modern JavaScript.</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="bi bi-link-45deg"></i></div>
-            <h4 class="title"><a href="#">Backend Development & API Engineering</a></h4>
-            <p class="description">Expertise in Laravel, PHP, MySQL, and RESTful APIs, building high-performance backend systems with seamless integration.</p>
+            <h4 class="title"><a href="#">Backend Development &amp; API Engineering</a></h4>
+            <p class="description">Laravel, PHP, MySQL, and RESTful APIs — high-performance backend systems, authentication, multi-branch architecture, and seamless third-party integrations.</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
             <div class="icon"><i class="bi bi-cloud-upload"></i></div>
-            <h4 class="title"><a href="">Remote Consulting & Strategy</a></h4>
-            <p class="description">Offering remote consulting services focused on system design and architecture, helping businesses build sustainable and scalable solutions from anywhere.</p>
+            <h4 class="title"><a href="#">Remote Consulting &amp; Strategy</a></h4>
+            <p class="description">System design, architecture, and technical leadership for ERP and enterprise projects — helping businesses build sustainable, scalable solutions from anywhere.</p>
           </div>
         </div>
       </div>
-    </section>    
-        
-    <!-- <section id="contact" class="contact">
-      <div class="container">
-    
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>If you’re looking to discuss a project or collaboration, feel free to get in touch. I’m available for freelance work, part time jobs, remote work, full-time jobs, consulting, or long-term partnerships. Please use the form below or reach out directly through my contact details.</p>
-        </div>
-    
-        <div class="row" data-aos="fade-in">
-    
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Addis Ababa, Ethiopia</p>
-              </div>
-    
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>kasahunabera81@gmail.com</p>
-              </div>
-    
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+251 989010004</p>
-              </div>
-    
-            </div>
-          </div>
-    
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" id="contact-form" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="email">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" name="message" id="message" rows="8" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center">
-                <button type="button" class="btn btn-primary" id="submit-button">Send Message</button>
-              </div>              
-            </form>
-          </div>
-    
-        </div>
-    
-      </div>
-    </section> -->
+    </section>
+    <!-- End Services Section -->
+
+    <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
         <div class="section-title">
           <h2>Get In Touch</h2>
-          <p>Whether you’re looking for a **freelance developer, remote collaboration, full-time hire, or technical consultation**, I am available for projects of all sizes. Feel free to **reach out via email, phone, or by using the contact form below**.</p>
+          <p>Whether you are looking for a freelance developer, remote collaboration, full-time hire, or technical consultation, I am available for projects of all sizes. Reach out via email, phone, or the contact form below.</p>
         </div>
-    
+
         <div class="row" data-aos="fade-in">
           <!-- Contact Info -->
           <div class="col-lg-5 d-flex align-items-stretch">
@@ -834,33 +740,33 @@
                 <h4>Location:</h4>
                 <p>Addis Ababa, Ethiopia</p>
               </div>
-    
+
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
                 <p><a href="mailto:kasahunabera81@gmail.com">kasahunabera81@gmail.com</a></p>
               </div>
-    
+
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call / WhatsApp:</h4>
                 <p><a href="tel:+251989010004">+251 989010004</a></p>
               </div>
-    
+
               <div class="linkedin">
                 <i class="bi bi-linkedin"></i>
                 <h4>LinkedIn:</h4>
                 <p><a href="https://www.linkedin.com/in/kasahun-abera-3aa293219/" target="_blank">linkedin.com/in/kasahun-abera</a></p>
               </div>
-    
+
               <div class="github">
                 <i class="bi bi-github"></i>
                 <h4>GitHub:</h4>
-                <p><a href="https://github.com/kasahun-abera" target="_blank">github.com/kasahun-abera</a></p>
+                <p><a href="https://github.com/kasahun-Abera" target="_blank">github.com/kasahun-Abera</a></p>
               </div>
             </div>
           </div>
-    
+
           <!-- Contact Form -->
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
             <form action="forms/contact.php" id="contact-form" method="post" role="form" class="php-email-form">
@@ -894,19 +800,19 @@
           </div>
         </div>
       </div>
-    </section>    
+    </section>
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->  
-  <footer id="footer">  
-    <div class="container">  
-      <div class="copyright">  
-        &copy;<strong><span><script>document.write(new Date().getFullYear());</script></span></strong>  All Rights Reserved.  
-      </div>  
-      <div class="credits">  
-      </div>  
-    </div>  
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy;<strong><span><script>document.write(new Date().getFullYear());</script></span></strong> Kasahun Abera. All Rights Reserved.
+      </div>
+      <div class="credits">
+      </div>
+    </div>
   </footer><!-- End  Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -920,90 +826,78 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Get the form and input elements
       const form = document.querySelector('.php-email-form');
       const loading = document.querySelector('.loading');
       const sentMessage = document.querySelector('.sent-message');
       const errorMessage = document.querySelector('.error-message');
-  
+
       const nameInput = document.getElementById('name');
       const emailInput = document.getElementById('email');
       const subjectInput = document.getElementById('subject');
       const messageInput = document.getElementById('message');
-  
-      // Hide messages initially
+
       loading.style.display = 'none';
       sentMessage.style.display = 'none';
       errorMessage.style.display = 'none';
-  
-      // Validate email format
+
       function isValidEmail(email) {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailPattern.test(email);
       }
-  
-      // Handle button click event
-      document.getElementById('submit-button').addEventListener('click', function () {
-        // Prevent normal form submission
+
+      document.getElementById('submit-button').addEventListener('click', function (event) {
         event.preventDefault();
-  
-        // Perform validation checks
+
         const name = nameInput.value.trim();
         const email = emailInput.value.trim();
         const subject = subjectInput.value.trim();
         const message = messageInput.value.trim();
-  
-        // Check if any fields are empty
+
         if (name === "" || email === "" || subject === "" || message === "") {
           errorMessage.innerHTML = 'Please fill out all fields.';
           errorMessage.style.display = 'block';
           sentMessage.style.display = 'none';
-          return; // Stop submission if validation fails
+          return;
         }
-  
-        // Check for valid email format
+
         if (!isValidEmail(email)) {
           errorMessage.innerHTML = 'Please enter a valid email address.';
           errorMessage.style.display = 'block';
           sentMessage.style.display = 'none';
-          return; // Stop submission if email is invalid
+          return;
         }
-  
-        // Show loading message
+
         loading.style.display = 'block';
         errorMessage.style.display = 'none';
         sentMessage.style.display = 'none';
-  
-        // Prepare form data for submission
+
         const formData = new FormData(form);
-  
-        // AJAX form submission using Fetch API
+
         fetch(form.action, {
           method: 'POST',
           body: formData,
         })
-          .then(response => response.json()) // Parse JSON response
+          .then(response => response.json())
           .then(data => {
-            loading.style.display = 'none'; // Hide loading message
+            loading.style.display = 'none';
             if (data.status === "success") {
-              sentMessage.innerHTML = data.message; // Use the message from response
-              sentMessage.style.display = 'block'; // Show success message
-              errorMessage.style.display = 'none'; // Hide error message
-              form.reset(); // Clear the form inputs
+              sentMessage.innerHTML = data.message;
+              sentMessage.style.display = 'block';
+              errorMessage.style.display = 'none';
+              form.reset();
             } else {
-              throw new Error(data.message); // Trigger error handling for any other message
+              throw new Error(data.message);
             }
           })
           .catch(error => {
-            loading.style.display = 'none'; // Hide loading message
-            sentMessage.style.display = 'none'; // Hide success message
-            errorMessage.innerHTML = error.message; // Show error message
+            loading.style.display = 'none';
+            sentMessage.style.display = 'none';
+            errorMessage.innerHTML = error.message;
             errorMessage.style.display = 'block';
           });
       });
@@ -1011,11 +905,10 @@
   </script>
   <script>
     window.addEventListener('load', function () {
-      // Hide the preloader after the page has fully loaded
       document.getElementById('preloader').classList.add('hidden');
     });
-  </script>  
-   
+  </script>
+
 </body>
 
 </html>

@@ -1,0 +1,4 @@
+# Prevent direct HTTP access to mail configuration
+<Files "mail.config.php">
+    Require all denied
+</Files>

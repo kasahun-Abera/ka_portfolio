@@ -1,1 +1,10 @@
 DirectoryIndex index.html
+
+# Deny access to sensitive files
+<FilesMatch "\.(env|ini)$">
+    Require all denied
+</FilesMatch>
+
+<Files "mail.config.php">
+    Require all denied
+</Files>
